@@ -1,6 +1,6 @@
 package com.example.demo.controller;
-import com.example.demo.config.ConfigurationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -12,16 +12,15 @@ import java.util.Map;
 @Controller
 public class RegistrationController {
 
-    ConfigurationService configurationService;
-
     @Autowired
-    public RegistrationController(ConfigurationService configurationService) {
-        this.configurationService = configurationService;
+    private Environment env;
+
+    public RegistrationController() {
     }
 
     @RequestMapping("/registration")
     public String startRegistration(Map<String,Object> model){
-        model.put("message",configurationService.getRegistrationMessage());
+        model.put("message",env.getProperty("registration.message"));
         return "registration";
     }
 

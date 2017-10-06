@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8"/>
+    <title>Login screen</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+<div th:replace="fragments/header :: header"></div>
+<h1 th:text="${message}">Welcome</h1>
+<a th:href="@{/registration}" class="btn btn-primary">Register</a>
+</body>
+</html>
