@@ -10,7 +10,7 @@ import javax.validation.constraints.NotNull;
 public class AccountDto {
     @NotNull
     @NotEmpty
-    private String userName;
+    private String username;
 
     @NotNull
     @NotEmpty
@@ -21,19 +21,15 @@ public class AccountDto {
     @NotEmpty
     private String email;
 
-    public AccountDto(String email, String userName, String password, String matchingPassword) {
-        this.email = email;
-        this.userName = userName;
-        this.password = password;
-        this.matchingPassword = matchingPassword;
+    public AccountDto() {
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {

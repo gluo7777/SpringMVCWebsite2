@@ -6,6 +6,14 @@ package com.example.demo.entity;
 
 import javax.persistence.Entity;
 
+/**
+ * TODO: More fields to add later
+ * - DOB with calendar picker
+ * - Phone number
+ * - Security question
+ * - Security answer
+ */
+@Entity
 public class Account {
     private String userName;
     private String passWord;
