@@ -2,4 +2,4 @@
 **/out
 src/main/java/META-INF/
 **/target
-SpringMVCWebsite2.iml
+*.iml
