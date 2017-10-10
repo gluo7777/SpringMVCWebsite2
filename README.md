@@ -1,4 +1,3 @@
-Login UI
 
 Ideas for the util project
 - signup/register
