@@ -4,7 +4,9 @@ package com.example.demo.entity;
  * Created by william.luo on 9/18/2017.
  */
 
-import javax.persistence.Entity;
+import ch.qos.logback.classic.db.names.ColumnName;
+
+import javax.persistence.*;
 
 /**
  * TODO: More fields to add later
@@ -14,10 +16,23 @@ import javax.persistence.Entity;
  * - Security answer
  */
 @Entity
+@Table(
+        name="UserAccounts"
+)
 public class Account {
+    // TODO add auto-generated-id, unique
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO) // provided by database
+    private long UserId;
+    @Column(name = "Username")
     private String userName;
+    @Column(name = "Password")
     private String passWord;
+    @Column(name = "Email")
     private String email;
+
+    public Account() {
+    }
 
     public Account(String userName, String passWord, String email) {
         this.userName = userName;
@@ -25,9 +40,8 @@ public class Account {
         this.email = email;
     }
 
-    public Account(String userName, String passWord) {
-        this.userName = userName;
-        this.passWord = passWord;
+    public long getUserId() {
+        return UserId;
     }
 
     public String getUserName() {

@@ -1,5 +1,7 @@
 package com.example.demo.dto;
 
+import com.example.demo.security.annotations.MatchingPassword;
+import com.example.demo.security.annotations.ValidEmail;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
@@ -7,6 +9,7 @@ import javax.validation.constraints.NotNull;
 /**
  * Created by william.luo on 9/18/2017.
  */
+@MatchingPassword
 public class AccountDto {
     @NotNull
     @NotEmpty
@@ -17,6 +20,7 @@ public class AccountDto {
     private String password;
     private String matchingPassword;
 
+    @ValidEmail
     @NotNull
     @NotEmpty
     private String email;
@@ -54,5 +58,15 @@ public class AccountDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "AccountDto{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", matchingPassword='" + matchingPassword + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
